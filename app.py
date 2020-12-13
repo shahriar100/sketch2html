@@ -1,3 +1,4 @@
+from flask_ngrok import run_with_ngrok
 from flask import Flask, request, send_from_directory, redirect, url_for
 from PIL import Image, ImageDraw
 from io import BytesIO
@@ -7,6 +8,9 @@ import layoutDetection
 from time import sleep
 
 app = Flask(__name__)
+
+# to run with ngrok
+run_with_ngrok(app)
 
 @app.route('/')
 def index():
